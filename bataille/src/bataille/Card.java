@@ -49,10 +49,10 @@ public class Card{
     public int whoWinDuel(Card card_adv){
         int value1 = values.indexOf(this.value);
         int value2 = values.indexOf(card_adv.getValue());
-        if(value1 < value2){
+        if (value1 < value2){
             return 1;
         }else{
-            if(value1 == value2){
+            if (value1 == value2){
                 return 2;
             }else{
                 return 0;

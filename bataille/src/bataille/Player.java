@@ -40,7 +40,7 @@ public class Player{
 
     // Draw a card during a game
     public Card drawCard(){
-        if(this.deck.size() > 0){
+        if (this.deck.size() > 0){
             Card card = this.deck.get(deck.size() - 1);
             this.deck.remove(deck.size() - 1);
             return card;
