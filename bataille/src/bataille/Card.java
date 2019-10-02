@@ -29,11 +29,11 @@ public class Card{
         return value + " de " + color;
     }
 
-    public String getvalue() {
+    public String getValue() {
         return this.value;
     }
 
-    public String getcolor() {
+    public String getColor() {
         return this.color;
     }
 
@@ -48,7 +48,7 @@ public class Card{
 
     public int whoWinDuel(Card card_adv){
         int value1 = values.indexOf(this.value);
-        int value2 = values.indexOf(card_adv.getvalue());
+        int value2 = values.indexOf(card_adv.getValue());
         if(value1 < value2){
             return 1;
         }else{
