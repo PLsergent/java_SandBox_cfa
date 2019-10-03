@@ -51,7 +51,11 @@ public class Player{
     }
 
     // Give points when winning a duel
-    public void hasWinDuel(){
+    // Two params : the two cards that have been won
+    // The winner of each duels takes both cards and put them under his deck
+    public void hasWinDuel(Card card1, Card card2){
+        this.deck.add(0, card1);
+        this.deck.add(0, card2);
         this.points += 2;
     }
 
@@ -70,36 +74,59 @@ public class Player{
     public static int play(Player player1, Player player2){
         // Number of even duels
         int numberOfEven = 0;
+
         while (true){
+
+            // Stop playing if one of the two players has no more cards (never really happens)
+            if (player1.getDeck().size() == 0 || player2.getDeck().size() == 0){
+                return numberOfEven;
+            }
 
             // Each player draw a card
             Card player1Card = player1.drawCard();
             Card player2Card = player2.drawCard();
 
-            if (player1Card == null || player2Card == null){
-                return numberOfEven;
-            }
+            System.out.println("1 : " + player1Card.getColor() + " " + player1Card.getValue());
+            System.out.println("2 : " + player2Card.getColor() + " " + player2Card.getValue());
 
-            // They compare both cards
+            // We compare both cards
             int cardCompare = player1Card.whoWinDuel(player2Card);
 
             // Give points to the winner of the duel
             if (cardCompare == 1){
-                player1.hasWinDuel();
+                System.out.println("Player 1 win duel");
+                player1.hasWinDuel(player1Card, player2Card);
             }else if (cardCompare == 0){
-                player2.hasWinDuel();
+                System.out.println("Player 2 win duel");
+                player2.hasWinDuel(player1Card, player2Card);
             }else{
+                // If the duel is even we put back both cards under their deck
+                player1.getDeck().add(0, player1Card);
+                player2.getDeck().add(0, player2Card);
                 numberOfEven++;
+            }
+
+            System.out.println("=================");
+
+            // Stop playing if one of the two players reach 1000 points
+            if (player1.getPoints() > 1000 || player2.getPoints() > 1000){
+                return numberOfEven;
             }
         }
     }
 
     // Display game result
     public static void gameResult(Player player1, Player player2, int numberOfEven) {
-        System.out.println("Player 1 : " + player1.getPoints());
-        System.out.println("Player 2 : " + player2.getPoints());
+        // Display number of cards within each decks
+        System.out.println("Deck 1 : " + player1.getDeck().size() + " cards");
+        System.out.println("Deck 2 : " + player2.getDeck().size() + " cards");
+
+        // Display points
+        System.out.println("Player 1 : " + player1.getPoints() + " points");
+        System.out.println("Player 2 : " + player2.getPoints() + " points");
         System.out.println("Number of even duel : " + numberOfEven);
 
+        // Display winner
         String winner;
         if (player1.getPoints() > player2.getPoints()){
             winner = "player1";
