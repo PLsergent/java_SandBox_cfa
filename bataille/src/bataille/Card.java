@@ -44,8 +44,9 @@ public class Card{
         this.value = new_value;
     }
 
-    // ==== Useful methods to know who win a duel ====
+    // ==== Useful methods ====
 
+    // To know who wins duel
     public int whoWinDuel(Card card_adv){
         int value1 = values.indexOf(this.value);
         int value2 = values.indexOf(card_adv.getValue());
@@ -58,5 +59,16 @@ public class Card{
                 return 0;
             }
         }
+    }
+
+    // Create main deck of the game
+    public static ArrayList<Card> createMainDeck(){
+        ArrayList<Card> mainDeck = new ArrayList<Card>();
+        for (String i : Card.colors){
+            for (String j : Card.values){
+                mainDeck.add(new Card(i, j));
+            }
+        }
+        return mainDeck;
     }
 }
