@@ -70,11 +70,15 @@ public class Player{
     public static int play(Player player1, Player player2){
         // Number of even duels
         int numberOfEven = 0;
-        for (int i = 0; i < 26; i++){
+        while (true){
 
             // Each player draw a card
             Card player1Card = player1.drawCard();
             Card player2Card = player2.drawCard();
+
+            if (player1Card == null || player2Card == null){
+                return numberOfEven;
+            }
 
             // They compare both cards
             int cardCompare = player1Card.whoWinDuel(player2Card);
@@ -88,7 +92,6 @@ public class Player{
                 numberOfEven++;
             }
         }
-        return numberOfEven;
     }
 
     // Display game result
