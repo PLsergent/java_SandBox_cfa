@@ -101,6 +101,7 @@ public class Player{
                 player2.hasWinDuel(player1Card, player2Card);
             }else{
                 // If the duel is even we put back both cards under their deck
+                System.out.println("Draw!");
                 player1.getDeck().add(0, player1Card);
                 player2.getDeck().add(0, player2Card);
                 numberOfEven++;
