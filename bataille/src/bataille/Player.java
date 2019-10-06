@@ -77,7 +77,7 @@ public class Player{
 
         while (true){
 
-            // Stop playing if one of the two players has no more cards (never really happens)
+            // Stop playing if one of the two players has no more cards
             if (player1.getDeck().size() == 0 || player2.getDeck().size() == 0){
                 return numberOfEven;
             }
