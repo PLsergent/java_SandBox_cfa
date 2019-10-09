@@ -6,18 +6,24 @@ import java.io.FileNotFoundException;
 public class FileReaderMain{
 
     public static void main(String[] args) throws FileNotFoundException, Exception {
-        File file1 = new File("/home/pl/everysaint/java_SandBox_cfa/file_reader/plain_text_file.txt");
+        if (args.length == 0 || args.length > 1)
+            throw new Exception("Invalid number of arguments.");
 
-        if (FileReader.getFileExtension(file1).equals("txt")){
-            FileReader file_reader1 = new PlainText(file1);
-            
-            file_reader1.readFile();
-            file_reader1.displayContent();
+        File file1 = new File(args[0]);
 
-            file_reader1.resetScanner();
-            
-            file_reader1.reverseLinesContent();
-        }
-        
+        FileReader file_reader1 = new PlainText(file1);
+
+        file_reader1.readFile();
+        file_reader1.displayContent();
+
+        file_reader1.resetScanner();
+        System.out.println("============================");
+
+        file_reader1.reverseLinesContent();
+
+        file_reader1.resetScanner();
+        System.out.println("============================");
+
+        file_reader1.reverseContent();
     }
 }

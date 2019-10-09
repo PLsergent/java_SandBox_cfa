@@ -13,12 +13,10 @@ public abstract class FileReader implements FileReaderInterface {
     protected String name;
 
 
-    FileReader(File fileObj) throws FileNotFoundException, Exception {
+    FileReader(File fileObj) throws FileNotFoundException {
         this.fileObj = fileObj;
         this.fileScanner = new Scanner(fileObj);
         this.path = fileObj.getPath();
-        if (!getFileExtension(fileObj).equals("txt"))
-            throw new Exception("Invalid file extension.");
         this.type = getFileExtension(fileObj);
         this.name = fileObj.getName();
     }
