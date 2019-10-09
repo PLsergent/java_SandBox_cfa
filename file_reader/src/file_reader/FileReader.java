@@ -13,6 +13,7 @@ public abstract class FileReader implements FileReaderInterface {
     protected String name;
 
 
+    // Constructor
     FileReader(File fileObj) throws FileNotFoundException {
         this.fileObj = fileObj;
         this.fileScanner = new Scanner(fileObj);
@@ -21,6 +22,8 @@ public abstract class FileReader implements FileReaderInterface {
         this.name = fileObj.getName();
     }
 
+
+    // Static methods to determine file extension
     public static String getFileExtension(File file) {
         String fileName = file.getName();
         if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
@@ -28,6 +31,8 @@ public abstract class FileReader implements FileReaderInterface {
         else return "";
     }
 
+
+    // Useful methods
     public String getType() {
         return getFileExtension(this.fileObj);
     }
@@ -48,11 +53,13 @@ public abstract class FileReader implements FileReaderInterface {
         this.fileScanner.useDelimiter("\\Z");
     }
 
+    // Used to go back to first line of the file
     public void resetScanner() throws FileNotFoundException{
         this.fileScanner.close();
         this.fileScanner = new Scanner(this.fileObj);
     }
 
+    // Display content of the whole file
     public void displayContent() {
         System.out.println(this.fileScanner.next());
     }
@@ -61,6 +68,8 @@ public abstract class FileReader implements FileReaderInterface {
         return this.getName() + " " + this.getPath() + " " + this.getType();
     }
 
+
+    // Implemented in subclasses
     public void reverseLinesContent() {};
     public void reverseContent() {};
 }

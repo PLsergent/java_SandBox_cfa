@@ -12,12 +12,17 @@ public class PlainText extends FileReader {
     private String type;
     private String name;
 
+
+    // Constructor
     PlainText(File fileObj) throws FileNotFoundException, Exception {
         super(fileObj);
+        // Throw an exception if the file is not related to this contructor
         if (!FileReader.getFileExtension(super.fileObj).equals("txt"))
             throw new Exception("Invalid file extension.");
     }
 
+
+    // Display content with reversed lines
     public void reverseLinesContent() {
 
         ArrayList<String> lines = new ArrayList<String>();
@@ -33,7 +38,10 @@ public class PlainText extends FileReader {
         }
     };
 
+
+    // Display content with reversed characters and lines
     public void reverseContent() {
+
         ArrayList<String> lines = new ArrayList<String>();
 
         super.fileScanner.useDelimiter("\n");
@@ -50,5 +58,4 @@ public class PlainText extends FileReader {
             System.out.println();
         }
     };
-
 }
