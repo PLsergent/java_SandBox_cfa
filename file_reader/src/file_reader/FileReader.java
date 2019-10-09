@@ -1,6 +1,8 @@
 package file_reader;
 import java.io.File; 
-import java.util.Scanner; 
+import java.util.Scanner;
+import java.lang.Exception;
+import java.io.FileNotFoundException;
 
 public abstract class FileReader implements FileReaderInterface {
 
@@ -10,11 +12,13 @@ public abstract class FileReader implements FileReaderInterface {
     protected String type;
     protected String name;
 
-    
-    FileReader(File fileObj, Scanner fileScanner) {
+
+    FileReader(File fileObj) throws FileNotFoundException, Exception {
         this.fileObj = fileObj;
-        this.fileScanner = fileScanner;
+        this.fileScanner = new Scanner(fileObj);
         this.path = fileObj.getPath();
+        if (!getFileExtension(fileObj).equals("txt"))
+            throw new Exception("Invalid file extension.");
         this.type = getFileExtension(fileObj);
         this.name = fileObj.getName();
     }
@@ -44,6 +48,11 @@ public abstract class FileReader implements FileReaderInterface {
 
     public void readFile() {
         this.fileScanner.useDelimiter("\\Z");
+    }
+
+    public void resetScanner() throws FileNotFoundException{
+        this.fileScanner.close();
+        this.fileScanner = new Scanner(this.fileObj);
     }
 
     public void displayContent() {
