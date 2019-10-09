@@ -1,0 +1,3 @@
+palindrome
+ceci n'est pas un palindrome
+kayak

@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Card
  */
-public class Card{
+public class Card {
     public static final ArrayList<String> colors = new ArrayList<String>(Arrays.asList(new String[]{"coeur", "trefle", "carreau", "pique"}));
     public static final ArrayList<String> values = new ArrayList<String>(Arrays.asList(new String[]{"as", "roi", "dame", "valet", "dix", "neuf", "huit", "sept", "six", "cinq", "quatre", "trois", "deux"}));
     private String color;
@@ -13,12 +13,12 @@ public class Card{
     
     // ==== Constructors ====
 
-    Card(){
+    Card() {
         this.color = "";
         this.value = "";
     }
 
-    Card(String color, String value){
+    Card(String color, String value) {
         this.color = color;
         this.value = value;
     }
@@ -39,7 +39,7 @@ public class Card{
 
     // ==== Setter ====
 
-    public void setCard(String new_color, String new_value){
+    public void setCard(String new_color, String new_value) {
         this.color = new_color;
         this.value = new_value;
     }
@@ -47,7 +47,7 @@ public class Card{
     // ==== Useful methods ====
 
     // To know who wins duel
-    public int whoWinDuel(Card card_adv){
+    public int whoWinDuel(Card card_adv) {
         int value1 = values.indexOf(this.value);
         int value2 = values.indexOf(card_adv.getValue());
         if (value1 < value2){
@@ -62,7 +62,7 @@ public class Card{
     }
 
     // Create main deck of the game
-    public static ArrayList<Card> createMainDeck(){
+    public static ArrayList<Card> createMainDeck() {
         ArrayList<Card> mainDeck = new ArrayList<Card>();
         for (String i : Card.colors){
             for (String j : Card.values){
