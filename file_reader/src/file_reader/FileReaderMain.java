@@ -35,5 +35,8 @@ public class FileReaderMain{
         // Display content with reversed lines and characters
         System.out.println("Reversed lines and characters content : \n--");
         file_reader1.reverseContent();
+
+        // Close scanner
+        file_reader1.fileScanner.close();
     }
 }

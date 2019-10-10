@@ -53,12 +53,14 @@ public abstract class FileReader implements FileReaderInterface {
         this.fileScanner.useDelimiter("\\Z");
     }
 
+
     // Used to go back to first line of the file
     public void resetScanner() throws FileNotFoundException{
         this.fileScanner.close();
         this.fileScanner = new Scanner(this.fileObj);
     }
 
+    
     // Display content of the whole file
     public void displayContent() {
         System.out.println(this.fileScanner.next());
