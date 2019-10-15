@@ -2,33 +2,33 @@ package geometrie;
 
 import java.lang.Math; 
 
-public class Point {
+public class Dot {
     private int x;
     private int y;
 
     // ==== Constructors ====
 
-    Point(){
+    Dot(){
         this.x = 0;
         this.y = 0;
     }
 
-    Point(int x, int y){
+    Dot(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
     // ==== Getters ====
 
-    public int getX(){
+    public int getX() {
         return this.x;
     }
 
-    public int getY(){
+    public int getY() {
         return this.y;
     }
 
-    public String getPosition(){
+    public String getPosition() {
         return "x : " + this.x + " y : " + this.y;
     }
 
@@ -44,7 +44,7 @@ public class Point {
         this.y += rNew_y;
     }
 
-    public double distance(Point pt){
+    public double distance(Dot pt){
         return Math.sqrt((Math.pow((pt.getX() - this.x), 2) + Math.pow((pt.getY() - this.y), 2)));
     }
 }

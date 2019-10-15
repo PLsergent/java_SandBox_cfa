@@ -1,10 +1,10 @@
 package geometrie;
 
-public class PointMain {
+public class DrawMain {
     public static void main(String[] args) {
         // Create new points
-        Point pt1 = new Point(1, 2);
-        Point pt2 = new Point(2, 4);
+        Dot pt1 = new Dot(1, 2);
+        Dot pt2 = new Dot(2, 4);
 
         // Display positions
         System.out.println(pt1.getPosition());
