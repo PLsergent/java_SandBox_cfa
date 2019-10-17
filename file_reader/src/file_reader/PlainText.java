@@ -52,7 +52,7 @@ public class PlainText extends FileReader {
 
         for (int i=0; i < lines.size(); i++) {
             String[] line = lines.get(lines.size()-1-i).split("");
-            for (int j=0; j < line.length; j++){
+            for (int j=0; j < line.length; j++) {
                 System.out.print(line[line.length-1-j]);
             }
             System.out.println();
