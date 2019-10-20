@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Bataille
  */
-public class Bataille {
+public class BatailleMain {
 
     public static void main(String[] args) {
         // Create two players
