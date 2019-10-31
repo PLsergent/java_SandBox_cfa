@@ -3,7 +3,7 @@ Sandbox for some Java project during cfa formation.
 https://esling.github.io/teaching-java/
 
 
-## Compile
+## Compile & execute
 
 <pre>
 ./compile.py --path <i>project</i> <i>arguments</i>
@@ -21,7 +21,7 @@ For example :
 <b>bataille/src/bataille$</b> javac -d ../../class *.java
 </pre>
 
-## Execute
+## Execute manually
 
 <pre>
 <b><i>project</i>/class$</b> java <i>package_name</i>.<i>main_class</i>
