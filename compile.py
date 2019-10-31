@@ -2,18 +2,20 @@
 
 import os
 from pathlib import Path
-from subprocess import run, Popen
+from subprocess import run, PIPE
 from argparse import ArgumentParser
 
 
 def compile(project_src, project_class):
-
     java_files_path = project_src / "*.java"
     cmd_compile = f"javac -d {str(project_class)} {str(java_files_path)}"
-    print(cmd_compile)
+    print(f"{cmd_compile}\n")
 
     try:
-        run(cmd_compile, shell=True)
+        errors = run(cmd_compile, shell=True)
+        print(f"{errors}\n")
+        if errors.returncode:
+            return False
     except Exception as e:
         print(f"Some issues when compiling...\n{e}")
         return False
@@ -28,7 +30,7 @@ def run_java(project_dir, project_class, main_file, args_files):
     for arg in args_files:
         cmd_run += f"../{os.path.basename(arg)} "
     print(cmd_run)
-    
+
     try:
         run(cmd_run, shell=True)
     except Exception as e:
@@ -37,10 +39,7 @@ def run_java(project_dir, project_class, main_file, args_files):
 
 if __name__ == '__main__':
     cli = ArgumentParser()
-    cli.add_argument(
-      "--path",
-      nargs="*"
-    )
+    cli.add_argument("--path", nargs="*")
 
     args = cli.parse_args()
 

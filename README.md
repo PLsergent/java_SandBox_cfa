@@ -2,7 +2,14 @@
 Sandbox for some Java project during cfa formation.
 https://esling.github.io/teaching-java/
 
+
 ## Compile
+
+<pre>
+./compile.py --path <i>project</i> <i>arguments</i>
+</pre>
+
+## Compile manually
 
 <pre>
 <b><i>project</i>/src/<i>package_name</i>$</b> javac -d ../../class *.java
