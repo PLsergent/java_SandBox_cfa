@@ -13,9 +13,9 @@ def compile(project_src, project_class):
     print(cmd_compile)
 
     try:
-        Popen(cmd_compile, shell=True)
-    except:
-        print("Some issues when compiling...")
+        run(cmd_compile, shell=True)
+    except Exception as e:
+        print(f"Some issues when compiling...\n{e}")
         return False
     else:
         return True
@@ -23,16 +23,16 @@ def compile(project_src, project_class):
 
 def run_java(project_dir, project_class, main_file, args_files):
     os.chdir(project_class)
-    print(args_files)
-    if args_files:
-        cmd_run = f"java {project_dir.name}/{main_file.split('.')[0]} ../{os.path.basename(args_files)}"
-    else:
-        cmd_run = f"java {project_dir.name}/{main_file.split('.')[0]}"
 
+    cmd_run = f"java {project_dir.name}/{main_file.split('.')[0]} "
+    for arg in args_files:
+        cmd_run += f"../{os.path.basename(arg)} "
+    print(cmd_run)
+    
     try:
-        proc = Popen(cmd_run, shell=True)
-    except:
-        print("Some issues running the code...")
+        run(cmd_run, shell=True)
+    except Exception as e:
+        print(f"Some issues running the code...\n{e}")
 
 
 if __name__ == '__main__':
@@ -44,14 +44,8 @@ if __name__ == '__main__':
 
     args = cli.parse_args()
 
-    if len(args.path) >= 2:
-        project_dir = Path(args.path[0])
-        args_files = Path(args.path[1])
-    else:
-        project_dir = Path(args.path[0])
-        args_files = None
-    
-    print(len(args.path))
+    project_dir = Path(args.path[0])
+    args_files = [Path(file) for file in args.path[1:]]
 
     project_src = project_dir / "src" / project_dir.name
     project_class = project_dir / "class"
