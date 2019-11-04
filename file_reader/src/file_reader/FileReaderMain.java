@@ -16,13 +16,13 @@ public class FileReaderMain{
         File file2 = new File(args[1]);
 
         // Create File reader
-        FileReader file_reader1 = new PlainText(file1);
-        FileReader file_reader2 = new PlainText(file2);
+        PlainText file_reader1 = new PlainText(file1);
+        PlainText file_reader2 = new PlainText(file2);
 
         // Read file (change delimiter) and display content
-        file_reader1.readFile();
-        System.out.println("File 1 content : \n--");
-        file_reader1.displayContent();
+        file_reader2.readFile();
+        System.out.println("File 2 content : \n--");
+        file_reader2.displayContent();
 
         file_reader1.resetScanner();
         System.out.println("============================");
@@ -39,10 +39,12 @@ public class FileReaderMain{
         file_reader1.reverseContent();
 
         // Compare content from two files
+        file_reader1.resetScanner();
+        file_reader2.resetScanner();
         PlainText.comparePlainTextFiles(file_reader1, file_reader2);
 
         // Close scanner
-        file_reader1.fileScanner.close();
-        file_reader2.fileScanner.close();
+        file_reader1.closeScanner();
+        file_reader2.closeScanner();
     }
 }

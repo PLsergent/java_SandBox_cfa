@@ -29,7 +29,7 @@ def run_java(project_dir, project_class, main_file, args_files):
     cmd_run = f"java {project_dir.name}/{main_file.split('.')[0]} "
     for arg in args_files:
         cmd_run += f"../{os.path.basename(arg)} "
-    print(cmd_run)
+    print(f"{cmd_run}\n")
 
     try:
         run(cmd_run, shell=True)

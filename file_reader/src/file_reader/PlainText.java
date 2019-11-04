@@ -2,6 +2,7 @@ package file_reader;
 import java.io.File; 
 import java.util.Scanner; 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.io.FileNotFoundException;
 
 public class PlainText extends FileReader {
@@ -28,14 +29,7 @@ public class PlainText extends FileReader {
 
     // Display content with reversed lines
     public void reverseLinesContent() {
-        ArrayList<String> lines = new ArrayList<String>();
-
-        super.fileScanner.useDelimiter("\n");
-
-        // Add each lines to an array
-        while (super.fileScanner.hasNext()) {
-            lines.add(super.fileScanner.next());
-        }
+        ArrayList<String> lines = super.readLines();
 
         for (int i=0; i < lines.size(); i++) {
             // Display each lines starting at the end of the array "lines"
@@ -46,14 +40,7 @@ public class PlainText extends FileReader {
 
     // Display content with reversed characters and lines
     public void reverseContent() {
-        ArrayList<String> lines = new ArrayList<String>();
-
-        super.fileScanner.useDelimiter("\n");
-
-        // Add each lines to an array
-        while (super.fileScanner.hasNext()) {
-            lines.add(super.fileScanner.next());
-        }
+        ArrayList<String> lines = super.readLines();
 
         for (int i=0; i < lines.size(); i++) {
             // For each lines : create an array with every char composing the line
@@ -67,9 +54,22 @@ public class PlainText extends FileReader {
         }
     }
 
-
     // Display differences between two plain text files
-    public static void comparePlainTextFiles(FileReader file1, FileReader file2) {
+    public static void comparePlainTextFiles(PlainText file1, PlainText file2) {
         System.out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
+        
+        ArrayList<String> lines1 = file1.readLines();
+        ArrayList<String> lines2 = file2.readLines();
+
+        // Make sure that the main file is the longest one
+        if (lines2.size() > lines1.size()) {
+            ArrayList<String> temp = lines1;
+            lines1 = lines2;
+            lines2 = temp;
+        }
+
+        for (int i=0; i < lines1.size(); i++) {
+            
+        }
     }
 }

@@ -1,0 +1,3 @@
+palindromes
+ceci n'est pas un palindromes
+kayaka

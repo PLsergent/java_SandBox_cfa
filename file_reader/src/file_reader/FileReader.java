@@ -1,6 +1,7 @@
 package file_reader;
 import java.io.File; 
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.lang.Exception;
 import java.io.FileNotFoundException;
 
@@ -55,6 +56,10 @@ public abstract class FileReader implements FileReaderInterface {
         this.fileScanner.useDelimiter("\\Z");
     }
 
+    public void closeScanner() {
+        this.fileScanner.close();
+    }
+
 
     // Used to go back to first line of the file
     public void resetScanner() throws FileNotFoundException{
@@ -70,6 +75,21 @@ public abstract class FileReader implements FileReaderInterface {
 
     public String toString() {
         return this.getName() + " " + this.getPath() + " " + this.getType();
+    }
+
+
+    // Used in reverseContent and CompareFiles
+    public ArrayList<String> readLines() {
+        ArrayList<String> lines = new ArrayList<String>();
+
+        this.fileScanner.useDelimiter("\n");
+
+        // Add each lines to an array
+        while (this.fileScanner.hasNext()) {
+            lines.add(this.fileScanner.next());
+        }
+
+        return lines;
     }
 
 
