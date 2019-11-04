@@ -56,8 +56,15 @@ public class PlainText extends FileReader {
 
     // Display differences between two plain text files
     public static void comparePlainTextFiles(PlainText file1, PlainText file2) {
-        System.out.println(ANSI_RED + "This text is red!" + ANSI_RESET);
+        /**
+         * Keep count of differences counting +1 for:
+         *  - a different letter within a word
+         *  - a whole new word whitin a line
+         *  - a whole new line 
+         */
+        int diff = 0;
         
+        // Create two arrays with each lines of each files        
         ArrayList<String> lines1 = file1.readLines();
         ArrayList<String> lines2 = file2.readLines();
 
@@ -68,8 +75,85 @@ public class PlainText extends FileReader {
             lines2 = temp;
         }
 
+        /**
+         * for each line in lines:
+         *      create an other array with each words of line
+         *      for each word in line:
+         *          create an other array with each letters of word
+         * 
+         * Example of how it works with one iteration of each loop:
+         * 
+         * lines1 = ["palindrome oui", "ceci n'est pas un palindrome", "kayak"]
+         *      words1 = ["palindrome", "oui"]
+         *          letters1 = ["p", "a", "l", "i", "n", "d", "r", "o", "m", "e"]
+         * 
+         * After that we can compare each files and find differences in each level : line, word or letter
+         */
+
         for (int i=0; i < lines1.size(); i++) {
-            
+            if (i < lines1.size() && i < lines2.size()) {
+                // if lines2[i] exists
+                // Create two arrays with each word of each lines  
+                String[] words1 = lines1.get(i).split(" ");
+                String[] words2 = lines2.get(i).split(" ");
+
+                // Make sure that the main line is the longest one
+                if (words2.length > words1.length) {
+                    String[] temp = words1;
+                    words1 = words2;
+                    words2 = temp;
+                }
+                
+                for (int j=0; j < words1.length; j++) {
+                    if (j < words1.length && j < words2.length) {
+                        // if words2[j] exists
+                        // Create two arrays with each letters of each words  
+                        String[] letters1 = words1[j].split("");
+                        String[] letters2 = words2[j].split("");
+
+                        // Make sure that the main word is the longest one
+                        if (letters2.length > letters1.length) {
+                            String[] temp = letters1;
+                            letters1 = letters2;
+                            letters2 = temp;
+                        }
+
+                        for (int k=0; k < letters1.length; k++) {
+                            if (k < letters1.length && k < letters2.length) {
+                                // if letters2[k] exists
+                                if (letters1[k].equals(letters2[k])) {
+                                    // if two letters are equals display it in green
+                                    System.out.print(ANSI_GREEN + letters1[k] + ANSI_RESET);
+                                } else {
+                                    // else display it in red
+                                    System.out.print(ANSI_RED + letters1[k] + ANSI_RESET);
+                                    diff++;
+                                }
+                            } else {
+                                // else display the letters[1] in red
+                                System.out.print(ANSI_RED + letters1[k] + ANSI_RESET);
+                                diff++;
+                            }
+                        }
+                        // End of a word
+                        System.out.print(" ");
+                    } else {
+                        // else display words1[j] in red
+                        System.out.print(ANSI_RED + words1[j] + ANSI_RESET);
+                        diff++;
+                        // End of a word
+                        System.out.print(" ");
+                    }
+                }
+                System.out.println();
+            } else {
+                // else display lines1[i] in red
+                System.out.print(ANSI_RED+ lines1.get(i) + ANSI_RESET);
+                diff++;
+                // End of a line
+                System.out.println();
+            }
         }
+        System.out.println("Number of differences : " + diff);
     }
 }

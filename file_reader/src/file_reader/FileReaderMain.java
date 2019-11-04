@@ -20,9 +20,9 @@ public class FileReaderMain{
         PlainText file_reader2 = new PlainText(file2);
 
         // Read file (change delimiter) and display content
-        file_reader2.readFile();
-        System.out.println("File 2 content : \n--");
-        file_reader2.displayContent();
+        file_reader1.readFile();
+        System.out.println("File 1 content : \n--");
+        file_reader1.displayContent();
 
         file_reader1.resetScanner();
         System.out.println("============================");
@@ -38,9 +38,12 @@ public class FileReaderMain{
         System.out.println("Reversed lines and characters content : \n--");
         file_reader1.reverseContent();
 
-        // Compare content from two files
         file_reader1.resetScanner();
         file_reader2.resetScanner();
+        System.out.println("============================");
+
+        // Compare content from two files
+        System.out.println("Comparaison between file 1 & 2 : \n--");
         PlainText.comparePlainTextFiles(file_reader1, file_reader2);
 
         // Close scanner
