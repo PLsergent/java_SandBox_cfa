@@ -1,6 +1,6 @@
 package file_reader;
 
-public interface FileReaderInterface{
+public interface FileReaderInterface {
 
     String getType();
     String getPath();

@@ -7,16 +7,9 @@ import java.io.FileNotFoundException;
 
 public class PlainText extends FileReader {
 
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_RED = "\u001B[31m";
-
-    private File fileObj;
-    private Scanner fileScanner;
-    private String path;
-    private String type;
-    private String name;
-
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_RED = "\u001B[31m";
 
     // Constructor
     PlainText(File fileObj) throws FileNotFoundException, Exception {
