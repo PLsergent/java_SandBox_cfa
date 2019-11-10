@@ -3,8 +3,8 @@ package rpg_pixel_game;
 
 public class Wizard extends Character {
 
-    Wizard() {
-        super();
+    Wizard(String name) {
+        super(name);
         this.armor = 2;
         this.speed = 2;
         this.strength = 2;

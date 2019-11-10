@@ -10,4 +10,8 @@ public abstract class Weapon {
     Weapon(int damage) {
         this.damage = damage;
     }
+
+    public int getDamage() {
+        return this.damage;
+    }
 }

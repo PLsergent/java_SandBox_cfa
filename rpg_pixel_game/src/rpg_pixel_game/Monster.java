@@ -20,4 +20,8 @@ public class Monster {
         this.strength = 2;
         this.level = 1;
     }
+
+    public void beingAttack(int damageTaken) {
+        this.lifePoint -= damageTaken;
+    }
 }

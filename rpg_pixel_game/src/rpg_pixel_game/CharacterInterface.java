@@ -7,7 +7,7 @@ public interface CharacterInterface {
     String getCharClass();
     String getAttributes();
 
-    void basicAttack();
+    void basicAttack(Monster m);
     void levelUp();
 
     int getLifePoint();
