@@ -1,7 +1,7 @@
 package rpg_pixel_game;
 
 
-public abstract class Character implements CharacterInterface {
+public abstract class Character {
 
     protected String name; 
     protected int lifePoint;
@@ -11,6 +11,7 @@ public abstract class Character implements CharacterInterface {
     protected Weapon weapon;
     protected int level;
 
+    Character() {}
 
     // Constructor
     Character(String name) {
@@ -28,18 +29,37 @@ public abstract class Character implements CharacterInterface {
     }
 
     public String getAttributes() {
-        return 
+        return
+            "=============ATTRIBUTES===========" + "\n" +
             "Char name: " + this.name + "\n" +
             "LP: " + this.lifePoint + ", Lvl: " + this.level + "\n" +
-            "Armor: " + this.armor + ", Speed: " + this.speed + "\n" +
-            "Strength: " + this.strength + ", Weapon: " + this.weapon + "\n";
+            "Armor: " + this.armor + ", Speed: " + this.speed + ", Strength: " + this.strength + "\n" +
+            "Class: " + this.getCharClass() + ", Weapon: " + this.weapon;
     }
 
     public void basicAttack(Monster m) {
-        m.beingAttack(this.weapon.getDamage() + this.strength);
+        int totalDmg = this.weapon.getDamage() + this.strength;
+        int dmgDealed = m.beingAttack(totalDmg);
+        System.out.println("Basic attack " + PlayMain.ANSI_RED + "-" + dmgDealed + PlayMain.ANSI_RESET);
     }
 
-    public void levelUp() {};
+    public int beingAttack(int damageTaken) {
+        int damageDealed = damageTaken - this.armor > 0 ? damageTaken - this.armor : 0;
+        this.lifePoint -= damageDealed;
+        return damageDealed;
+    }
+
+    public Boolean isDead() {
+        Boolean dead = this.lifePoint <= 0 ? true : false;
+        return dead;
+    }
+
+    public abstract void levelUp();
+
+    public abstract void damageSpell(Character c);
+    public abstract void effectSpell();
+
+    public abstract String displaySpells();
 
     public int getLifePoint() {
         return this.lifePoint;
@@ -55,6 +75,10 @@ public abstract class Character implements CharacterInterface {
 
     public int getStrength() {
         return this.strength;
+    }
+
+    public int getLevel() {
+        return this.level;
     }
 
     public Weapon getWeapon() {

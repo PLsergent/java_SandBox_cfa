@@ -2,7 +2,7 @@
 
 import os
 from pathlib import Path
-from subprocess import run, PIPE
+from subprocess import run
 from argparse import ArgumentParser
 
 

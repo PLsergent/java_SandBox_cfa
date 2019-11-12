@@ -94,6 +94,6 @@ public abstract class FileReader implements FileReaderInterface {
 
 
     // Implemented in subclasses
-    public void reverseLinesContent() {};
-    public void reverseContent() {};
+    public abstract void reverseLinesContent();
+    public abstract void reverseContent();
 }

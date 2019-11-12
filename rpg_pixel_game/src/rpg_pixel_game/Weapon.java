@@ -14,4 +14,12 @@ public abstract class Weapon {
     public int getDamage() {
         return this.damage;
     }
+
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
+
+    public void improve(int improvmt) {
+        this.damage += improvmt;
+    }
 }
