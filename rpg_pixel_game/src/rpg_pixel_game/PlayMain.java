@@ -53,7 +53,7 @@ public class PlayMain {
                         System.out.println("==================================");
                         System.out.println("Choose a spell to cast: " +  char_player.displaySpells() + " 4)Do nothing");
                         spell = reader.nextInt();
-                    } while (spell <= 0 || spell > 3);
+                    } while (spell <= 0 || spell > 4);
 
                     Boolean m_first;
                     if (m.getSpeed() > char_player.getSpeed()) {
@@ -61,6 +61,7 @@ public class PlayMain {
                         m.basicAttack(char_player);
                         if (char_player.isDead()) {
                             System.out.println("GAME OVER");
+                            gameOver = true;
                             break;
                         }
                         m_first = true;
@@ -87,6 +88,7 @@ public class PlayMain {
                         if (char_player.isDead()) {
                             System.out.println("GAME OVER");
                             gameOver = true;
+                            break;
                         }
                     }
 

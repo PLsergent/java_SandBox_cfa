@@ -4,7 +4,7 @@ package rpg_pixel_game;
 public class Wizard extends Character {
 
     private static final double LP_LEVEL_RATIO = 1.6;
-    private static final double ARMOR_LEVEL_RATIO = 1.1;
+    private static final double ARMOR_LEVEL_RATIO = 0.9;
     private static final double SPEED_LEVEL_RATIO = 1.1;
     private static final double STRENGTH_LEVEL_RATIO = 1.1;
 
