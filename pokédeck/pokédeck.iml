@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Téléchargements/org.json.jar!/" />
+          <root url="jar://$MODULE_DIR$/librairies_source/json-simple-1.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Téléchargements/json-simple-1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/librairies_source/org.json.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
