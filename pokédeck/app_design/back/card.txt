@@ -1,0 +1,11 @@
+abstract class CardAbstract {
+    String cardType; // pokemon, trainer, energy
+    String cardName; // for energy cards 'energy fire'
+    String type; // pokemon type, trainer type and energy type
+
+    getName();
+    setName();
+    getType();
+    setType();
+    ...
+}

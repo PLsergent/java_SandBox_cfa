@@ -1,0 +1,6 @@
+class Spell {
+    String name;
+    Energy[] energyNeeded;
+    String damage;
+    String description;
+}

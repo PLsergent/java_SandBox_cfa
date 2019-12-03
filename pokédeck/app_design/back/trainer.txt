@@ -1,0 +1,4 @@
+class Trainer extends Card {
+    String description;
+    String trainerRule;
+}

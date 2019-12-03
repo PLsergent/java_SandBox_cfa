@@ -1,0 +1,49 @@
+[
+    {
+        "HP": 99,
+        "cardName": "First Card",
+        "cardNumber": 0,
+        "cardType": "Pokémon",
+        "expansionName": "Base",
+        "nextEvol": "None",
+        "previousEvol": "None",
+        "spells": [{
+            "damage": "99+",
+            "description": "First spell",
+            "energyNeeded": [{
+                "cardName": "Energy fire",
+                "cardType": "Energy",
+                "type": "Fire"
+            }],
+            "name": "Basic attack"
+        }],
+        "stage": 0,
+        "type": "Fire"
+    },
+    {
+        "cardName": "First trainer",
+        "cardNumber": 1,
+        "cardType": "Trainer",
+        "description": "First trainer ever.",
+        "expansionName": "Base",
+        "trainerRule": "You can play this card.",
+        "type": "Item"
+    },
+    {
+        "cardName": "Fire energy",
+        "cardType": "Energy",
+        "type": "Fire"
+    },
+    {
+        "HP": 0,
+        "cardName": "None",
+        "cardNumber": 0,
+        "cardType": "None",
+        "expansionName": "None",
+        "nextEvol": null,
+        "previousEvol": null,
+        "spells": [],
+        "stage": 0,
+        "type": "None"
+    }
+]

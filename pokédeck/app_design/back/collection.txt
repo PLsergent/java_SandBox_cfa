@@ -1,0 +1,7 @@
+Pattern singleton
+
+class Collection {
+    ArrayList<Card>() cards;
+
+    getData();
+}

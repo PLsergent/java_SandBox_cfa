@@ -1,0 +1,11 @@
+class Pokemon extends Card{
+    int HP;
+    int stage;
+    Pokemon previousEvol;
+    Pokemon nextEvol;
+    int cardNumber;
+    String expansionName;
+    ArrayList<Spell>() spells;
+
+    CRUDCard();
+}
