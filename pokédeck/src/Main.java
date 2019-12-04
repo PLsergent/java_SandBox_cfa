@@ -1,4 +1,5 @@
 import back.*;
+import front.Menu;
 
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -8,7 +9,6 @@ public class Main {
         System.out.println("============Pokédeck============");
         Collection collection = Collection.getInstance();
 
-        Card card = new Pokemon();
-        collection.addToCollection(card);
+        new Menu();
     }
 }
