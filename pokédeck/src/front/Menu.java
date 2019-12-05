@@ -6,6 +6,7 @@ import java.awt.*;
 public class Menu {
 
     public Menu() {
+        JFrame window = new JFrame("Pokédeck");
         JPanel screenInputPanel = new JPanel(new BorderLayout());
         JTextField screen = new JTextField("Welcome to the pokédeck");
         Font font = new Font("Arial", Font.BOLD, 40);
@@ -17,9 +18,9 @@ public class Menu {
         for (String i : items) {
             JButton b = new JButton(i);
             menuPanel.add(b);
+            b.addActionListener(new Navigate(window));
         }
 
-        JFrame window = new JFrame("Pokédeck");
         window.setSize(1500, 800);
         window.setLayout(new GridLayout(2, 1));
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

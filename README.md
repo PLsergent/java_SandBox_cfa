@@ -3,6 +3,10 @@ Sandbox for some Java project during cfa formation.
 https://esling.github.io/teaching-java/
 
 
+## Intellij projects
+- welcome_to_the_jogl
+- pokédeck
+
 ## Compile & execute
 
 <pre>
