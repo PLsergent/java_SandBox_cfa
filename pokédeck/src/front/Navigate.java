@@ -15,9 +15,27 @@ public class Navigate implements ActionListener {
 
     public void actionPerformed(ActionEvent actionEvent) {
         String actionCommand = actionEvent.getActionCommand();
-        if (actionCommand.equals("Search")) {
-            Search search = new Search();
-            this.window.add(search.getPanel());
+
+        switch (actionCommand) {
+            case "Home":
+                Home home = new Home();
+                this.window.setVisible(false);
+                break;
+            case "Search": {
+                Search search = new Search();
+                this.window.setVisible(false);
+                break;
+            }
+            case "Add card": {
+                AddCard addCard = new AddCard();
+                this.window.setVisible(false);
+                break;
+            }
+            case "All cards": {
+                AllCards allCards = new AllCards();
+                this.window.setVisible(false);
+                break;
+            }
         }
     }
 }

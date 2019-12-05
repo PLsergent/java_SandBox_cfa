@@ -3,15 +3,16 @@ package front;
 import javax.swing.*;
 import java.awt.*;
 
-public class Menu {
 
-    public Menu() {
+public class Home {
+
+    public Home() {
         JFrame window = new JFrame("Pokédeck");
         JPanel screenInputPanel = new JPanel(new BorderLayout());
-        JTextField screen = new JTextField("Welcome to the pokédeck");
+        JLabel title = new JLabel("Welcome to the pokédeck");
         Font font = new Font("Arial", Font.BOLD, 40);
-        screen.setFont(font);
-        screenInputPanel.add(screen, BorderLayout.CENTER);
+        title.setFont(font);
+        screenInputPanel.add(title, BorderLayout.CENTER);
 
         JPanel menuPanel = new JPanel(new GridLayout(1, 3));
         String[] items = {"Search", "Add card", "All cards"};
