@@ -9,7 +9,6 @@ public class Navigate implements ActionListener {
     private JFrame window;
 
     Navigate(JFrame window) {
-        super();
         this.window = window;
     }
 

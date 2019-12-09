@@ -11,6 +11,8 @@ public class Home {
         JPanel screenInputPanel = new JPanel(new BorderLayout());
         JLabel title = new JLabel("Welcome to the pokédeck");
         Font font = new Font("Arial", Font.BOLD, 40);
+        Font buttonFont = new Font("Arial", Font.PLAIN, 30);
+
         title.setFont(font);
         screenInputPanel.add(title, BorderLayout.CENTER);
 
@@ -19,6 +21,7 @@ public class Home {
         for (String i : items) {
             JButton b = new JButton(i);
             menuPanel.add(b);
+            b.setFont(buttonFont);
             b.addActionListener(new Navigate(window));
         }
 

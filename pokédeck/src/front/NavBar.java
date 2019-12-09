@@ -15,6 +15,7 @@ public class NavBar {
 
         JLabel titleLabel = new JLabel(title);
         Font font = new Font("Arial", Font.BOLD, 25);
+        Font buttonFont = new Font("Arial", Font.PLAIN, 25);
         titleLabel.setFont(font);
         this.navPanel.add(titleLabel);
 
@@ -22,6 +23,7 @@ public class NavBar {
         for (String i : items) {
             JButton b = new JButton(i);
             navPanel.add(b);
+            b.setFont(buttonFont);
             b.addActionListener(new Navigate(window));
         }
         window.add(navPanel, BorderLayout.NORTH);

@@ -1,30 +1,48 @@
 package front;
 
+
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-public class Search {
+public class Search extends ActionScreen {
 
-    private JPanel mainPanel;
-    private JFrame searchWindow;
+    private static final String title = "Search";
 
     Search() {
-        this.searchWindow = new JFrame("Pokédeck");
-        this.mainPanel = new JPanel(new BorderLayout());
+        super(title);
+        JPanel mainPanel = this.getPanel();
+        GridBagConstraints c = new GridBagConstraints();
 
-        searchWindow.setSize(1500, 800);
-        searchWindow.setLayout(new BorderLayout());
-        searchWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        searchWindow.add(this.mainPanel, BorderLayout.CENTER);
-        new NavBar("Search", this.searchWindow);
-        searchWindow.setVisible(true);
-    }
+        // Create TextField
+        JTextField searchField = new JTextField(30);
+        Border searchFieldBorder = BorderFactory.createLineBorder(Color.BLACK, 1);
+        Font searchFont = new Font("Arial", Font.PLAIN, 25);
+        searchField.setBorder(searchFieldBorder);
+        searchField.setFont(searchFont);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 10;       //reset to default
+        c.weighty = 1.0;   //request any extra vertical space
+        c.anchor = GridBagConstraints.PAGE_START; //bottom of space
+        c.insets = new Insets(40,0,0,0);  //top padding
+        c.gridx = 0;       //aligned with button 2
+        c.gridwidth = 5;   //2 columns wide
+        c.gridy = 0;       //third row
+        mainPanel.add(searchField, c);
 
-    public JPanel getPanel() {
-        return mainPanel;
-    }
-
-    public JFrame getFrame() {
-        return searchWindow;
+        JButton searchButton = new JButton("Search");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 10;       //reset to default
+        c.weighty = 1.0;   //request any extra vertical space
+        c.anchor = GridBagConstraints.PAGE_START; //bottom of space
+        c.insets = new Insets(40,0,0,0);  //top padding
+        c.gridx = 7;       //aligned with button 2
+        c.gridwidth = 2;   //2 columns wide
+        c.gridy = 0;       //third row
+        Font buttonFont = new Font("Arial", Font.PLAIN, 18);
+        searchButton.setFont(buttonFont);
+        mainPanel.add(searchButton, c);
     }
 }
