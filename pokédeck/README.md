@@ -8,8 +8,8 @@ Two packages:
 - ```src/Main.java``` : entry point of the app.
 
 ## Documents
-- ```app_design/```: project design, divided in two parts : back and front.
-- ```./report.md```: report, application design, list of features.
+- ```documents/app_design/```: project design, divided in two parts : back and front.
+- ```documents/Report.md```: report, application design, list of features.
 
 ## Source
 https://esling.github.io/documents/Java_Pokedeck.pdf
