@@ -25,7 +25,7 @@ public class Navigate implements ActionListener {
                 this.window.setVisible(false);
                 break;
             }
-            case "Add card": {
+            case "Add/remove card": {
                 new AddCard();
                 this.window.setVisible(false);
                 break;

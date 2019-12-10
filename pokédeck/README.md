@@ -5,7 +5,11 @@ Java/Swing application to store pokémon cards from pokémonTCG.
 Two packages:
 - ```src/back/```: all classes that handles Cards object, collection and data.
 - ```src/front/```: all Swing classes that handles the Swing GUI.
-- ```src/Main.java``` : entry point of the app. 
+- ```src/Main.java``` : entry point of the app.
+
+## Documents
+- ```app_design/```: project design, divided in two parts : back and front.
+- ```./report.md```: report, application design, list of features.
 
 ## Source
 https://esling.github.io/documents/Java_Pokedeck.pdf

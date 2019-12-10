@@ -141,4 +141,33 @@ public class Collection {
             e.printStackTrace();
         }
     }
+
+    // Remove a card from the collection and save it to data.json
+    public void removeFromCollection(Card card) {
+        try {
+            // Read data.json
+            File file = new File(DATAPATH);
+            FileReader reader = new FileReader(file);
+            // Parse to json
+            JSONParser parser = new JSONParser();
+            JSONArray array  = (JSONArray) parser.parse(reader);
+            // Close the reader
+            reader.close();
+
+            // Get index of the element to delete
+            int indexToRemove = cards.indexOf(card);
+            // Delete element
+            array.remove(indexToRemove);
+            // Create writer, and parse the array using org.com.JSONArray to have the pretty display
+            BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(file.getAbsoluteFile()));
+            org.json.JSONArray json = new org.json.JSONArray(array.toJSONString());
+            bufferWriter.write(json.toString(4));
+            bufferWriter.close();
+
+            this.cards.remove(indexToRemove);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

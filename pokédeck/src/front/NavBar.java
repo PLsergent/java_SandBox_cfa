@@ -17,7 +17,7 @@ public class NavBar {
         titleLabel.setFont(font);
         this.navPanel.add(titleLabel);
 
-        String[] items = {"Home", "Search", "Add card", "All cards"};
+        String[] items = {"Home", "Search", "Add/remove card", "All cards"};
         for (String i : items) {
             JButton b = new JButton(i);
             navPanel.add(b);

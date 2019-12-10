@@ -17,7 +17,7 @@ public class Home {
         screenInputPanel.add(title, BorderLayout.CENTER);
 
         JPanel menuPanel = new JPanel(new GridLayout(1, 3));
-        String[] items = {"Search", "Add card", "All cards"};
+        String[] items = {"Search", "Add/remove card", "All cards"};
         for (String i : items) {
             JButton b = new JButton(i);
             menuPanel.add(b);

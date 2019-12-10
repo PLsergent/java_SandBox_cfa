@@ -16,6 +16,7 @@ public class AddCard extends ActionScreen {
     AddCard() {
         super(title);
 
+        JLabel justToTest = new JLabel("Development stage button: ");
         Font buttonFont = new Font("Arial", Font.PLAIN, 20);
         JButton addBlankCard = new JButton("Add blank pokémon card");
         addBlankCard.addActionListener(e -> {
@@ -25,6 +26,16 @@ public class AddCard extends ActionScreen {
         });
         addBlankCard.setFont(buttonFont);
 
+        JButton removeLastCard = new JButton("Remove last card");
+        removeLastCard.addActionListener(e -> {
+            Collection collection = Collection.getInstance();
+            Card lastCard = collection.getCards().get(collection.getCards().size()-1);
+            collection.removeFromCollection(lastCard);
+        });
+        removeLastCard.setFont(buttonFont);
+
+        this.mainPanel.add(justToTest);
         this.mainPanel.add(addBlankCard);
+        this.mainPanel.add(removeLastCard);
     }
 }

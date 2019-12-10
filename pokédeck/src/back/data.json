@@ -45,17 +45,5 @@
         "spells": [],
         "stage": 0,
         "type": "Fire"
-    },
-    {
-        "HP": 0,
-        "cardName": "None",
-        "cardNumber": 0,
-        "cardType": "Pokémon",
-        "expansionName": "None",
-        "nextEvol": null,
-        "previousEvol": null,
-        "spells": [],
-        "stage": 0,
-        "type": "Fire"
     }
 ]
