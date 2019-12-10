@@ -48,7 +48,7 @@ In this application we are going to consider all the different verion of each ca
 ## Application design
 
 ### Back
-![Class diagram](./app_design/back/pokedeck_back.jpg "Class diagram")
+![Back Class diagram](./app_design/back/pokedeck_back.jpg "Back Class diagram")
 
 #### Card 
 Abstract class, basic card with following attributes : type, number and specific type.
@@ -65,7 +65,7 @@ Only one attribute, which is an array of card, represent all the added card.
 This class will contain the method to add/delete cards from the collection and handle the modification of the Json file.
 
 ### Front - Swing interface
-![Class diagram](./app_design/front/pokedeck_front.jpg "Class diagram")
+![Front Class diagram](./app_design/front/pokedeck_front.jpg "Front Class diagram")
 
 #### Global explanation
 Our user interface will be compose of four main screens. Home, Search, AllCards and AddCard. We'll have an other screen for card details.<br/>
