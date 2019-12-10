@@ -17,7 +17,7 @@ public class ClickButton implements ActionListener {
     private final static String firstPriority =  "[\\*\\/]";
     private final static String secondPriority = "[\\+\\-]";
 
-    static public final String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
+    public final static String WITH_DELIMITER = "((?<=%1$s)|(?=%1$s))";
 
     ClickButton(JTextArea textArea) {
         super();

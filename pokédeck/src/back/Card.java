@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 
-public class Card {
+public abstract class Card {
 
     private final static String[] possibleCardType = { "pokémon", "trainer", "energy" };
     List<String> possibleCardTypeList = Arrays.asList(possibleCardType);
@@ -63,6 +63,10 @@ public class Card {
     public String getType() {
         return type;
     }
+
+    abstract Long getCardNumber();
+
+    public abstract String getExpansionName();
 
 
     public String toString() {

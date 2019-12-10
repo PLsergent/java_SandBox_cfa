@@ -10,7 +10,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import javax.annotation.processing.FilerException;
 
 public class Collection {
 
@@ -44,7 +43,6 @@ public class Collection {
                 JSONObject currentObj = (JSONObject) item;
 
                 if (currentObj.get("cardType").toString().toLowerCase().equals("pokémon")) {
-                    System.out.println("Pokemon");
 
                     // Handle previous and next evolution pokemon object
                     Card previousEvol = new Pokemon();
@@ -75,21 +73,21 @@ public class Collection {
                         spellArrayList.add(new Spell(spell.get("name").toString(), energies, spell.get("damage").toString(), spell.get("description").toString()));
                     }
 
+                    // Create current card
                     Card card = new Pokemon(currentObj.get("cardType").toString(), currentObj.get("cardName").toString(), currentObj.get("type").toString(),
                             (Long) currentObj.get("HP"), (Long) currentObj.get("stage"), (Pokemon) previousEvol, (Pokemon) nextEvol, (Long) currentObj.get("cardNumber"),
                             currentObj.get("expansionName").toString(), spellArrayList);
 
+                    // Add card to the collection
                     this.cards.add(card);
 
                 } else if (currentObj.get("cardType").toString().toLowerCase().equals("trainer")) {
-                    System.out.println("Trainer");
 
                     Card card = new Trainer(currentObj.get("cardType").toString(), currentObj.get("cardName").toString(), currentObj.get("type").toString(),
                             currentObj.get("description").toString(), currentObj.get("trainerRule").toString(), (Long) currentObj.get("cardNumber"),
                             currentObj.get("expansionName").toString());
                     this.cards.add(card);
                 } else if (currentObj.get("cardType").toString().toLowerCase().equals("energy")){
-                    System.out.println("Energy");
 
                     Card card = new Energy(currentObj.get("cardType").toString(), currentObj.get("cardName").toString(), currentObj.get("type").toString());
                     this.cards.add(card);
@@ -97,7 +95,6 @@ public class Collection {
                     throw new Exception("Error in data.json parsing!!");
                 }
             }
-            reader.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

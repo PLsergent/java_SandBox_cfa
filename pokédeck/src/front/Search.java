@@ -4,8 +4,7 @@ package front;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
 
 public class Search extends ActionScreen {
 
@@ -43,6 +42,7 @@ public class Search extends ActionScreen {
         c.gridy = 0;       //third row
         Font buttonFont = new Font("Arial", Font.PLAIN, 18);
         searchButton.setFont(buttonFont);
+        searchButton.addActionListener(new ClickSearch(mainPanel, searchField));
         mainPanel.add(searchButton, c);
     }
 }
