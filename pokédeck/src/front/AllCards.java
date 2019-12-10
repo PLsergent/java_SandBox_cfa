@@ -35,9 +35,14 @@ public class AllCards extends ActionScreen {
             resultButton = new JButton(cards.get(i).getCardName() + ", " +cards.get(i).getCardType());
             resultButton.setFont(buttonFont);
             System.out.println(cards.get(i).getCardName());
-            c.insets = new Insets(100+50*i,300,0,300);
+            c.insets = new Insets(70+50*i,300,0,300);
             this.mainPanel.add(resultButton, c);
         }
         this.mainPanel.revalidate();
+
+        JScrollPane scrPane = new JScrollPane(this.mainPanel);
+        scrPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        this.screenWindow.getContentPane().add(scrPane);
+
     }
 }

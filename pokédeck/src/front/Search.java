@@ -12,7 +12,7 @@ public class Search extends ActionScreen {
 
     Search() {
         super(title);
-        JPanel mainPanel = this.getPanel();
+
         GridBagConstraints c = new GridBagConstraints();
 
         // Create TextField
@@ -29,7 +29,7 @@ public class Search extends ActionScreen {
         c.gridx = 0;       //aligned with button 2
         c.gridwidth = 5;   //2 columns wide
         c.gridy = 0;       //third row
-        mainPanel.add(searchField, c);
+        this.mainPanel.add(searchField, c);
 
         JButton searchButton = new JButton("Search");
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -42,7 +42,7 @@ public class Search extends ActionScreen {
         c.gridy = 0;       //third row
         Font buttonFont = new Font("Arial", Font.PLAIN, 18);
         searchButton.setFont(buttonFont);
-        searchButton.addActionListener(new ClickSearch(mainPanel, searchField));
-        mainPanel.add(searchButton, c);
+        searchButton.addActionListener(new ClickSearch(this.mainPanel, this.screenWindow, searchField));
+        this.mainPanel.add(searchButton, c);
     }
 }

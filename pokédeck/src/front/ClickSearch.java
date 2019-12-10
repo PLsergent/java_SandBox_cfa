@@ -16,10 +16,12 @@ public class ClickSearch implements ActionListener {
 
     private JPanel mainPanel;
     private JTextField searchField;
+    private JFrame screenWindow;
 
-    ClickSearch(JPanel mainPanel, JTextField searchField) {
+    ClickSearch(JPanel mainPanel, JFrame screenWindow, JTextField searchField) {
         this.mainPanel = mainPanel;
         this.searchField = searchField;
+        this.screenWindow = screenWindow;
     }
 
     public void actionPerformed(ActionEvent actionEvent) {
@@ -60,5 +62,9 @@ public class ClickSearch implements ActionListener {
             this.mainPanel.add(resultButton, c);
         }
         this.mainPanel.revalidate();
+
+        JScrollPane scrPane = new JScrollPane(this.mainPanel);
+        scrPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        this.screenWindow.getContentPane().add(scrPane);
     }
 }
