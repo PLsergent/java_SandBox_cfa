@@ -129,3 +129,22 @@ Class that will handle navigation between the frames. This class is used inside 
 - AllCards (*Development stage*)
     - Display all cards from the collection in list format. Each result is a button to navigate to the card details (not implemented yet).
     - Scroll Panel
+
+## Undone features
+
+### Back 
+- Card : Update
+
+### Front
+- Card details frame
+    - Update / Delete card
+- Search
+    - Filters
+    - Click on button to access card details
+    - Button per line to delete card
+- AddCard
+    - Form to add a new card
+- AllCards
+    - Click on button to access card details
+    - Button per line to delete card
+    - Filters
