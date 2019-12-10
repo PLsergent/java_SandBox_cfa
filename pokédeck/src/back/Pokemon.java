@@ -15,7 +15,7 @@ public class Pokemon extends Card {
     ArrayList<Spell> spells;
 
     public Pokemon() {
-        super();
+        super("Pokémon", "Fire");
         this.HP = 0L;
         this.stage = 0L;
         this.previousEvol = null;

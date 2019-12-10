@@ -1,0 +1,5 @@
+class NavBar {
+    private JPanel navPanel;
+
+    Initiate the navbar, all views except 'home' will use this component.
+}

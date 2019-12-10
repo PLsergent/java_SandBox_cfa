@@ -1,0 +1,10 @@
+asbtract class ActionScreen {
+    protected JPanel mainPanel;
+    protected JFrame screenWindow;
+
+    getPanel();
+    getFrame();
+
+    Classes that will inherit : AddCard, AllCards and Search.
+    This abstract class is going to setup the frame with the navbar.
+}

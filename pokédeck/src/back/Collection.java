@@ -45,12 +45,18 @@ public class Collection {
                 if (currentObj.get("cardType").toString().toLowerCase().equals("pokémon")) {
 
                     // Handle previous and next evolution pokemon object
-                    Card previousEvol = new Pokemon();
-                    Card nextEvol = new Pokemon();
+                    Card previousEvol = null;
+                    Card nextEvol = null;
 
                     for (Card c : this.cards) {
-                        if (c.getCardName().toLowerCase().equals(currentObj.get("previousEvol").toString().toLowerCase())) {
+                        if (currentObj.get("previousEvol") == null) {
+                            previousEvol = new Pokemon();
+                        } else if (c.getCardName().toLowerCase().equals(currentObj.get("previousEvol").toString().toLowerCase())) {
                             previousEvol = c;
+                        }
+
+                        if (currentObj.get("nextEvol") == null ) {
+                            nextEvol = new Pokemon();
                         } else if (c.getCardName().toLowerCase().equals(currentObj.get("nextEvol").toString().toLowerCase())) {
                             nextEvol = c;
                         }
@@ -128,6 +134,8 @@ public class Collection {
             org.json.JSONArray json = new org.json.JSONArray(array.toJSONString());
             bufferWriter.write(json.toString(4));
             bufferWriter.close();
+
+            this.cards.add(card);
 
         } catch (Exception e) {
             e.printStackTrace();

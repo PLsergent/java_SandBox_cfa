@@ -17,21 +17,21 @@ public class Navigate implements ActionListener {
 
         switch (actionCommand) {
             case "Home":
-                Home home = new Home();
+                new Home();
                 this.window.setVisible(false);
                 break;
             case "Search": {
-                Search search = new Search();
+                new Search();
                 this.window.setVisible(false);
                 break;
             }
             case "Add card": {
-                AddCard addCard = new AddCard();
+                new AddCard();
                 this.window.setVisible(false);
                 break;
             }
             case "All cards": {
-                AllCards allCards = new AllCards();
+                new AllCards();
                 this.window.setVisible(false);
                 break;
             }

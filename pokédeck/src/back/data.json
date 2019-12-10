@@ -35,15 +35,27 @@
         "type": "Fire"
     },
     {
+        "HP": 100,
+        "cardName": "Dragofeu",
+        "cardNumber": 12,
+        "cardType": "Pokémon",
+        "expansionName": "Base",
+        "nextEvol": "None",
+        "previousEvol": "None",
+        "spells": [],
+        "stage": 0,
+        "type": "Fire"
+    },
+    {
         "HP": 0,
         "cardName": "None",
         "cardNumber": 0,
-        "cardType": "None",
+        "cardType": "Pokémon",
         "expansionName": "None",
         "nextEvol": null,
         "previousEvol": null,
         "spells": [],
         "stage": 0,
-        "type": "None"
+        "type": "Fire"
     }
 ]

@@ -50,11 +50,13 @@ public class ClickSearch implements ActionListener {
         c.gridy = 0;
         c.gridwidth = 10;
 
+        Font buttonFont = new Font("Arial", Font.PLAIN, 18);
         JButton resultButton;
         for (int i=0; i < results.size(); i++) {
             resultButton = new JButton(cards.get(i).getCardName() + ", " +cards.get(i).getCardType());
+            resultButton.setFont(buttonFont);
             System.out.println(results.get(i).getCardName());
-            c.insets = new Insets(100+40*i,0,0,0);
+            c.insets = new Insets(100+50*i,0,0,0);
             this.mainPanel.add(resultButton, c);
         }
         this.mainPanel.revalidate();

@@ -2,13 +2,11 @@ package front;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.jar.JarEntry;
+
 
 public class NavBar {
 
-    private String title;
     private JPanel navPanel;
-    private JFrame window;
 
     NavBar(String title, JFrame window) {
         this.navPanel = new JPanel(new GridLayout(1, 5));

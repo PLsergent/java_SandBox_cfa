@@ -1,0 +1,9 @@
+class Search extends ActionScreen {
+
+    Setup and call 'click_search' to make a research on the collection.
+    The query is made on those fields :
+     - card name
+     - type of the card (trainer, pokemon, energy)
+     - specific type (fire, water, item, ...)
+     - expansion name
+}

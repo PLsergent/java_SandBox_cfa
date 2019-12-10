@@ -1,0 +1,5 @@
+class AddCard extends ActionScreen {
+    private JPanel mainPanel; ?
+
+    Form to add a new card to the collection.
+}

@@ -1,0 +1,5 @@
+class AllCards extends ActionScreen {
+    
+    Display all cards from collection.
+    JScrollPane ?
+}

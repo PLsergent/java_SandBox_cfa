@@ -1,0 +1,8 @@
+class Navigate implements ActionListener {
+    private JFrame window;
+
+    actionPerformed();
+
+    Used in 'home' and 'nabar'
+    This class will trigger the frame changes, depending on the button text. 
+}

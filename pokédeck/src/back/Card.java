@@ -31,6 +31,12 @@ public abstract class Card {
         this.type = "None";
     }
 
+    Card(String cardType, String type) {
+        this.cardType = cardType;
+        this.cardName = "None";
+        this.type = type;
+    }
+
     Card(String cardType, String cardName, String type) throws Exception {
         this.cardType = cardType;
         this.cardName = cardName;

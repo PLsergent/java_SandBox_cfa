@@ -1,0 +1,8 @@
+class ClickSearch implements ActionListener {
+    private JPanel mainPanel;
+    private JTextField searchField;
+
+    actionPerformed();
+
+    Handle research and display result.
+}

@@ -29,11 +29,13 @@ public class AllCards extends ActionScreen {
         c.weighty = 1;
         c.weightx = 1;
 
+        Font buttonFont = new Font("Arial", Font.PLAIN, 18);
         JButton resultButton;
         for (int i=0; i < cards.size(); i++) {
             resultButton = new JButton(cards.get(i).getCardName() + ", " +cards.get(i).getCardType());
+            resultButton.setFont(buttonFont);
             System.out.println(cards.get(i).getCardName());
-            c.insets = new Insets(100+40*i,300,0,300);
+            c.insets = new Insets(100+50*i,300,0,300);
             this.mainPanel.add(resultButton, c);
         }
         this.mainPanel.revalidate();
