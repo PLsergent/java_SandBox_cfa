@@ -1,3 +1,10 @@
+---
+papersize:
+- a4
+fontsize:
+- 12pt
+---
+
 # Report - pokédeck project
 
 ## Introduction
